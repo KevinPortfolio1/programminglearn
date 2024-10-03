@@ -4,3 +4,5 @@
   搜尋-線性,二分,DFS,BFS,hashtable
 # 演算法 (2024/10/02)
   排序-泡沫,快速,合併
+# 演算法 (2024/10/03)
+  SQL-SELECT,JOIN,ORDER BY,GROUP BY,WHERE,HAVING
