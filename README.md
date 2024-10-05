@@ -8,3 +8,6 @@
   SQL-SELECT,JOIN,ORDER BY,GROUP BY,WHERE,HAVING
 # 演算法 (2024/10/04)
   JAVASCRIPT-正規表達式,常用函式
+# 演算法 (2024/10/05)
+  SQL-文字比對
+  Pandas-csv資料處理
