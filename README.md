@@ -9,5 +9,8 @@
 # 演算法 (2024/10/04)
   JAVASCRIPT-正規表達式,常用函式
 # 演算法 (2024/10/05)
-  SQL-文字比對
+  SQL-文字比對<br>
   Pandas-csv資料處理
+# 演算法 (2024/10/06)
+  STACK,QUEUE<br>
+  BINARYTREE
