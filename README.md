@@ -10,7 +10,7 @@
   [JAVASCRIPT-正規表達式,常用函式](jstest.js)
 # 演算法 (2024/10/05)
   [SQL-文字比對](sqlstring.sql)<br>
-  [Pandas-csv資料處理](pandascvs.py)
+  [Pandas-csv資料處理](pandascsv.py)
 # 演算法 (2024/10/06)
   [STACK](stack.cpp),[QUEUE](queue.cpp)<br>
   [BINARYTREE](binarytreesort.cpp)
