@@ -20,3 +20,5 @@
   [Graph](graph1.h),[單元測試](unittest1.cpp)
 # 程式編輯注意 (2024/10/09)
   [字元處理](handlechar.cpp)
+  演算法 (2024/10/09)
+  [最大公因數/最小公倍數](gcdandlcm.cpp)
