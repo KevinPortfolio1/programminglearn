@@ -22,3 +22,5 @@
   [字元處理](handlechar.cpp)
 # 演算法 (2024/10/09)
   [最大公因數/最小公倍數](gcdandlcm.cpp)
+# 程式編輯注意 (2024/10/10)
+  [最大/最小值](maxandminvalue.cpp)
