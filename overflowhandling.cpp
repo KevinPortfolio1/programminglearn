@@ -69,3 +69,32 @@ int main() {
    3. 使用類型安全的數據結構
    4. 使用異常處理
 */
+
+
+/*
+安全結構
+
+#include <optional>
+
+std::optional<int> safe_add(int a, int b) {
+    if (b > 0 && a > std::numeric_limits<int>::max() - b) {
+        return std::nullopt;  // 溢位，返回無效值
+    } else if (b < 0 && a < std::numeric_limits<int>::min() - b) {
+        return std::nullopt;  // 下溢，返回無效值
+    }
+    return a + b;  // 返回有效值
+}
+
+#include <variant>
+
+using Result = std::variant<int, std::string>;
+Result safe_add(int a, int b) {
+    if (b > 0 && a > std::numeric_limits<int>::max() - b) {
+        return "Overflow detected!";  // 返回錯誤信息
+    } else if (b < 0 && a < std::numeric_limits<int>::min() - b) {
+        return "Underflow detected!";  // 返回錯誤信息
+    }
+    return a + b;  // 返回有效值
+}
+
+*/
