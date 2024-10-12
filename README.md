@@ -26,3 +26,5 @@
   [最大/最小值](maxandminvalue.cpp)
 # 程式編輯注意 (2024/10/11)
   [溢位處理](overflowhandling.cpp)
+# 演算法 (2024/10/12)
+  [指標](point1.cpp)
