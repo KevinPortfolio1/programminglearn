@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Add Movie</h1>
+
+<!--
+   
+<button> 可點擊的按鈕
+<datalist> 數據列表元素包含了一組 <option>
+<fieldset> 該字段集是用來在表單中的組數表單元素
+<input>     輸入元素用於創建表格的交互式控制
+  type
+  button
+  checkbox
+  color
+  date
+  datetime-local
+  email
+  file
+  hidden
+  image
+  month
+  number
+  password
+  radio
+  range
+  reset
+  search
+  submit
+  tel
+  text
+  time
+  url
+  week
+<label>    標籤元素代表一個項目在用戶界面的標題
+<option>   在 HTML 選項元素用於創建表示 <select>
+<select>   選擇元素代表呈現一個選項菜單的控制
+<textarea>  元素代表多行純文本編輯控制   
+   
+-->
+
+<form action="/addMovie.php" method="post">
+  <label for="fname">Name of Movie:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  
+  <label for="lyear">Year:</label>
+  <input type="number" id="lyear" name="lyear" min="1000" max="9999"><br><br>
+  
+  <label for="lGenre">Movie Genre:</label>
+  <select name="lGenre" id="lGenre">
+    <option value="Action">Action</option>
+	<option value="Comedy">Comedy</option>
+	<option value="Drama">Drama</option>
+	<option value="Horror">Horror</option>
+	<option value="Fantasy">Fantasy</option>
+	<option value="Romance">Romance</option>
+	<option value="Science Fiction">Action</option>
+  </select>
+  <br><br>
+  
+  <label for="lRating">Rating:</label>
+  <br><br>
+     <input type="radio" name="Rating" value="Kids" />Kids<br />
+	 <input type="radio" name="Rating" value="PG13" />PG13<br />
+	 <input type="radio" name="Rating" value="Adult" />Adult<br />
+  <br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
