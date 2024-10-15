@@ -30,3 +30,5 @@
   [指標](point1.cpp)
 # 網頁介面 (2024/10/14)
   [表單](htmlpostpage.html)
+# 網頁介面 (2024/10/15)
+  [傳送安全](jssafeway.js)
