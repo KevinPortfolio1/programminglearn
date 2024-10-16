@@ -32,3 +32,5 @@
   [表單](htmlpostpage.html)
 # 網頁介面 (2024/10/15)
   [傳送安全](jssafeway.js)
+# JS (2024/10/16)
+  [Clock](jsclock.html)
