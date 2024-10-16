@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="startTime()">
+
+<h2>JavaScript Clock</h2>
+
+<div id="txt"></div>
+
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  
+  //setTimeout 是 JavaScript 中的一個全局函數，用於在指定的延遲時間後執行一段代碼
+  //替代方案
+  //setInterval 用於定期執行一段代碼，直到清除
+  //requestAnimationFrame 用於動畫和高效的渲染。 會在下一次重繪之前執行，適合需要高幀率的場景。
+  //Promise 和 setTimeout 組合，可以更優雅地處理異步邏輯。
+  
+  setTimeout(startTime, 1000);
+  
+  //實用性
+  //時間戳
+  //格式化日期
+  //計算日期差
+  //時區處理
+  //計時器和日程安排
+  
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+</body>
+</html>
