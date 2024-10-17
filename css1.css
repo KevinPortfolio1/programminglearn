@@ -1,0 +1,168 @@
+/* 元素選擇器*/
+p {
+    color: blue;
+}
+
+/*類選擇器*/
+.highlight {
+    background-color: yellow;
+}
+
+/*ID選擇器*/
+
+#header {
+    font-size: 24px;
+}
+
+/*屬性選擇器*/
+
+/* <a href="https://example.com" target="_blank">外部鏈接</a>*/
+
+a[target] {
+    color: red;
+}
+
+/*<input type="text" placeholder="輸入姓名">*/
+
+input[type="text"] {
+    border: 1px solid gray;
+}
+
+/*組合選擇器*/
+
+ /*後代選擇器*/
+ /*選擇所有在 <div> 元素內的 <p> 元素*/
+  div p {
+    margin: 10px;
+  }
+  
+  
+  /*子元素選擇器*/
+  /*直接子元素為 <li> 的 <ul> 元素*/
+  ul > li {
+    list-style-type: none;
+  }
+  
+  /*相鄰兄弟選擇器*/
+  /*選擇直接跟在 <h2> 標籤後面的第一個 <p> 標籤*/
+  h2 + p {
+    font-style: italic;
+  }
+  
+  /*一般兄弟選擇器*/
+  /*選擇所有緊跟在 <h2> 標籤後的兄弟 <p> 標籤*/
+  h2 ~ p {
+    color: green;
+  }
+  
+/*偽類選擇器*/
+/*表示當用戶將滑鼠指針懸停在該元素上時的狀態*/
+ a:hover {
+    text-decoration: underline;
+}
+
+/* :first-child：這個偽類選擇器選擇父元素的第一個子元素*/
+li:first-child {
+    font-weight: bold;
+}
+/*選擇父元素的第二個子元素*/
+li:nth-child(2) {
+    color: orange;
+}
+/*::before 和 ::after：在元素內容前或後插入內容*/
+/*增強視覺效果或提供額外信息*/
+
+p::before {
+    content: "注意：";
+    font-weight: bold;
+}
+
+/* @符號用於引入一系列的規則和指令，通常被稱為“at-rules”*/
+/* 助於控制樣式的應用、引入媒體查詢、使用變數等*/
+
+/*@import 用於導入其他 CSS 文件*/
+@import url('styles.css');
+/*@media 用於定義媒體查詢，以根據不同的設備或屏幕大小應用樣式*/
+@media (max-width: 600px) {
+    body {
+        background-color: lightblue; /* 當屏幕寬度小於 600px 時設置背景顏色 */
+    }
+}
+/*@font-face 定義自訂字型，使你能夠使用非系統字型*/
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('mycustomfont.woff2') format('woff2'),
+         url('mycustomfont.woff') format('woff');
+}
+
+/*@keyframes 用於創建動畫的關鍵幀。這使你能夠控制動畫的過程*/
+@keyframes myAnimation {
+    0% {
+        opacity: 0; /* 開始時透明 */
+    }
+    100% {
+        opacity: 1; /* 結束時不透明 */
+    }
+}
+
+/*@supports 用於檢查瀏覽器是否支持某個 CSS 屬性或值，這樣可以根據支持情況應用不同的樣式*/
+@supports (display: grid) {
+    .container {
+        display: grid; /* 如果支持 Grid 布局，則應用 */
+    }
+}
+
+/*@layer 用於定義樣式層，使樣式的加載順序更易於控制。*/
+@layer reset {
+    /* 重置樣式 */
+}
+
+@layer base {
+    /* 基本樣式 */
+}
+
+@layer components {
+    /* 組件樣式 */
+}
+
+/*不同瀏覽器的支援*/
+/*前綴屬性*/
+.box {
+    -webkit-border-radius: 10px; /* Chrome 和 Safari */
+    -moz-border-radius: 10px;    /* Firefox */
+    border-radius: 10px;          /* 標準屬性 */
+}
+
+/*媒體查詢*/
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column; /* 垂直排列 */
+    }
+}
+
+/* CSS 變數*/
+:root {
+    --main-color: #3498db;
+    --padding: 16px;
+}
+
+.box {
+    background-color: var(--main-color);
+    padding: var(--padding);
+}
+
+/*不同需求的樣式*/
+/* 針對 Firefox */
+@-moz-document url-prefix() {
+    .box {
+        background-color: #f0f0f0; /* Firefox 特定樣式 */
+    }
+}
+
+/* 針對 Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .box {
+        border: 2px solid #3498db; /* Chrome 特定樣式 */
+    }
+}
+
