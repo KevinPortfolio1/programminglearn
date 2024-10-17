@@ -34,3 +34,5 @@
   [傳送安全](jssafeway.js)
 # JS (2024/10/16)
   [Clock](jsclock.html)
+# CSS (2024/10/17)
+  [選擇器,瀏覽器](css1.css)
