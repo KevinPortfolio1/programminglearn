@@ -38,3 +38,6 @@
   [選擇器,瀏覽器](css1.css)
 # Html (2024/10/18)
   [Bootstrap](htmlboostrap1.html)
+# Html (2024/10/19)
+  [Python+Pandas](pandas.py)
+
