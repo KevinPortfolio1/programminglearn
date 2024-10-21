@@ -40,4 +40,5 @@
   [Bootstrap](htmlboostrap1.html)
 # Html (2024/10/19)
   [Python+Pandas](pandas.py)
-
+# Html (2024/10/21)
+  [文字編碼](jschar.js)
