@@ -42,3 +42,5 @@
   [Python+Pandas](pandas.py)
 # Html (2024/10/21)
   [文字編碼](jschar.js)
+# JS (2024/10/22)
+  [fib題目](202410222204.js)
