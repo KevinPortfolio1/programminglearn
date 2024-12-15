@@ -1,0 +1,171 @@
+正規表達式在Python和C++中都有廣泛的應用，可以用來進行文本處理、數據驗證、提取信息等。
+下面我將展示如何在Python和C++中實現一些常見的正規表達式應用。
+Python中的正規表達式應用
+
+在Python中，re模組提供了強大的正規表達式功能。
+常見操作包括匹配（match）、查找（findall）、替換（sub）等。
+
+1. 驗證電子郵件
+
+驗證電子郵件格式是正規表達式的一個常見應用。
+
+import re
+
+# 電子郵件正規表達式
+email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+# 測試電子郵件
+email = "example@example.com"
+if re.match(email_regex, email):
+    print("有效的電子郵件地址")
+else:
+    print("無效的電子郵件地址")
+
+2. 查找電話號碼
+
+假設我們要從文本中查找所有符合格式的中國手機號碼。
+
+import re
+
+# 手機號碼正規表達式
+phone_regex = r'1[3-9]\d{9}'
+
+text = "我的電話是 13812345678，還有 13987654321。"
+
+# 查找所有匹配的電話號碼
+phones = re.findall(phone_regex, text)
+print("找到的電話號碼：", phones)
+
+3. 字符串替換
+
+如果我們想將文本中的日期格式從YYYY-MM-DD替換為DD/MM/YYYY。
+
+import re
+
+# 日期正規表達式
+date_regex = r'(\d{4})-(\d{2})-(\d{2})'
+
+text = "今天的日期是 2024-12-15，明天是 2024-12-16。"
+
+# 替換日期格式
+new_text = re.sub(date_regex, r'\3/\2/\1', text)
+print("替換後的文本：", new_text)
+
+4. 防止SQL注入（輸入過濾）
+
+如果想要過濾掉包含SQL注入風險的特殊字符，可以使用正規表達式來過濾。
+
+import re
+
+# 只允許字母、數字和下劃線
+input_regex = r'^[a-zA-Z0-9_]+$'
+
+user_input = "user_name; DROP TABLE users"
+
+# 檢查是否包含不安全字符
+if re.match(input_regex, user_input):
+    print("輸入有效")
+else:
+    print("輸入包含非法字符，請重試")
+
+C++中的正規表達式應用
+
+C++11 引入了 <regex> 標頭文件，這使得正規表達式在C++中也得到了良好的支持。下面展示如何在C++中進行正規表達式應用。
+1. 驗證電子郵件
+
+在C++中，您可以使用std::regex來處理正規表達式。
+
+#include <iostream>
+#include <regex>
+
+int main() {
+    std::string email = "example@example.com";
+    
+    // 電子郵件正規表達式
+    std::regex email_regex(R"(^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$)");
+    
+    if (std::regex_match(email, email_regex)) {
+        std::cout << "有效的電子郵件地址\n";
+    } else {
+        std::cout << "無效的電子郵件地址\n";
+    }
+    
+    return 0;
+}
+
+2. 查找電話號碼
+
+在C++中查找符合特定模式的電話號碼可以通過std::regex的std::regex_search和std::smatch來實現。
+
+#include <iostream>
+#include <regex>
+#include <string>
+
+int main() {
+    std::string text = "我的電話是 13812345678，還有 13987654321。";
+    
+    // 手機號碼正規表達式
+    std::regex phone_regex(R"(1[3-9]\d{9})");
+    
+    std::smatch match;
+    std::string::const_iterator search_start = text.cbegin();
+    
+    while (std::regex_search(search_start, text.cend(), match, phone_regex)) {
+        std::cout << "找到的電話號碼: " << match[0] << std::endl;
+        search_start = match.suffix().first;
+    }
+    
+    return 0;
+}
+
+3. 字符串替換
+
+在C++中使用std::regex_replace來替換字符串。
+
+#include <iostream>
+#include <regex>
+
+int main() {
+    std::string text = "今天的日期是 2024-12-15，明天是 2024-12-16。";
+    
+    // 日期正規表達式
+    std::regex date_regex(R"((\d{4})-(\d{2})-(\d{2}))");
+    
+    // 替換日期格式
+    std::string new_text = std::regex_replace(text, date_regex, R"(\3/\2/\1)");
+    std::cout << "替換後的文本: " << new_text << std::endl;
+    
+    return 0;
+}
+
+4. 防止SQL注入（輸入過濾）
+
+同樣，C++中也可以使用正規表達式來過濾不安全的輸入。
+
+#include <iostream>
+#include <regex>
+
+int main() {
+    std::string user_input = "user_name; DROP TABLE users";
+    
+    // 只允許字母、數字和下劃線
+    std::regex input_regex(R"(^[a-zA-Z0-9_]+$)");
+    
+    if (std::regex_match(user_input, input_regex)) {
+        std::cout << "輸入有效\n";
+    } else {
+        std::cout << "輸入包含非法字符，請重試\n";
+    }
+    
+    return 0;
+}
+
+總結
+
+正規表達式在Python和C++中都有許多實際應用，包括但不限於：
+
+    驗證輸入（如電子郵件、電話號碼等）
+    查找和提取特定模式（如URL、日期等）
+    字符串替換和處理
+    輸入過濾與安全防護（如防止SQL注入）
+    數據解析與分析
